@@ -1,0 +1,19 @@
+# Use root/example as user/password credentials
+version: '2'
+
+services:
+
+  backend_server:
+    image: samthingz/vue-back
+    restart: always
+    ports:
+      #- 3306:3306
+      - 3000:3000
+
+  frontend_client:
+    image: samthingz/vue-front
+    restart: always
+    links:
+      - "backend_server:localhost"
+    ports:
+      - 8080:8080
