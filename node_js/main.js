@@ -66,5 +66,3 @@ app.post('/login', (req, res, next) => {
     res.status(401).send('Login inválido!');
   }
 })
-
-//curl --data-urlencode "user=luiz" --data-urlencode "pwd=123" localhost:3000/login && echo ''
